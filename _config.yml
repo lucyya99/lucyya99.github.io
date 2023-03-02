@@ -24,7 +24,7 @@ texture:
   date_format: "%b %-d, %Y"
   style: black
   showNav: true
-  showPicker: true
+  showPicker: false
   
   navigation:
     - title: Log
