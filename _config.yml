@@ -24,11 +24,11 @@ texture:
   date_format: "%b %-d, %Y"
   style: black
   showNav: true
-  showPicker: false
+  showPicker: true
   
   navigation:
-    - title: My Work
-      url: "/my-work"
+    - title: Log
+      url: "/log"
     - title: Resume
       url: "/resume"
   
