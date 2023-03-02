@@ -28,10 +28,6 @@ texture:
   navigation:
     - title: Log
       url: "/log"
-    - title: Flutter
-      url: "/flutter"
-    - title: Error
-      url: "/error"
   
   showPicker: false
 
