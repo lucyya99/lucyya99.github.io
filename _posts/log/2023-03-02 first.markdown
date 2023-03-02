@@ -1,7 +1,0 @@
-#### Git Page로 개발자 블로그 시작
-##### 2023-03-02
-##### 1. {id}.github.io로 된 repository 생성
-##### 2. Settings - Pages
-###### Source/Deploy from branch, Branch/main으로 설정되어 있는지 확인
-##### 3. 원하는 jekyll theme 찾아서 다운로드
-##### 저는 [samursault](http://jekyllthemes.org/themes/Texture-Theme/)의 테마를 사용하였습니다.
