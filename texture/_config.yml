@@ -19,7 +19,7 @@ sass:
 
 permalink: texture/posts/:title/
 texture:
-  title: Study Log
+  title: 개발공부일지. Developer Study Log
   tagline: Developer. Designer
   date_format: "%b %-d, %Y"
   style: black
