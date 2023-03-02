@@ -155,10 +155,10 @@ yat:
 
 # Page default value
 # defaults:
-    home:
-      heading: "Lv1. 개발자 블로그에 오신 것을 환영합니다."
-      subheading: "공부한 내용과 혼자 해본 것들을 요약해서 올립니다."
-      banner: "background.jpg"
+  home:
+    heading: "Lv1. 개발자 블로그에 오신 것을 환영합니다."
+    subheading: "공부한 내용과 혼자 해본 것들을 요약해서 올립니다."
+    banner: "background.jpg"
 
 # Banner default settings
 # These banner settings are for global banner default, but you can also
