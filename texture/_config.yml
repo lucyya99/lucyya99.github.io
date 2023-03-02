@@ -1,4 +1,4 @@
-title: 개발 블로그, 공부 시작
+title: Helloooooo-world
 author: Developer Lv1.
 email: lucyya99@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -24,14 +24,6 @@ texture:
   date_format: "%b %-d, %Y"
   style: black
   showNav: true
-  showPicker: false
-
-  # generate social links in footer
-  social_links:
-    twitter: lucyya99
-    github:  https://github.com/lucyya99
-    linkedIn: lucyya99
-    rss: rss
 
   navigation:
     - title: Log
@@ -40,6 +32,17 @@ texture:
       url: "/flutter"
     - title: Error
       url: "/error"
+  
+  showPicker: false
+
+  # generate social links in footer
+  social_links:
+    twitter: lucyya99
+    github:  lucyya99
+    linkedIn: lucyya99
+    rss: rss
+
+  
  
 
 # If you want to link only specific pages in your header, uncomment
