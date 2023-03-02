@@ -28,7 +28,7 @@ texture:
   
   navigation:
     - title: Log
-      url: "/log"
+      url: "/log/"
     - title: Resume
       url: "/resume"
   
