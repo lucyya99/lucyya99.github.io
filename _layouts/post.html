@@ -55,7 +55,13 @@ sidebar:
     {%- endif -%}
 
     <div class="post-comments">
-      {%- include extensions/comments/utterances.html -%}
+      <script src="https://utteranc.es/client.js"
+        repo="lucyya99/blog-comments"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+      </script>
     </div>
 
   </section>
