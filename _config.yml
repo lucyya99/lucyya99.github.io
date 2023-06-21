@@ -196,10 +196,10 @@ banner: "sagegreen.jpg"
 # set follow_site_theme true to make utterances' theme follow the site's
 
 utterances:
-  repo: "lucyya99/blog-comments"
-  issue_term: "pathname"
-  label: "utterances comment"
-  follow_site_theme: true
+   repo: "lucyya99/blog-comments"
+   issue_term: "pathname"
+   label: "utterances comment"
+   follow_site_theme: true
 
 # Build settings
 # highlighter: none
