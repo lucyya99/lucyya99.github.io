@@ -202,7 +202,6 @@ comments:
     repo: "lucyya99/blog-comments"
     issue_term: "pathname"
     label: "utterances comment"
-    theme: "github-light"
     follow_site_theme: true
 
 # Build settings
