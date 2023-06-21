@@ -195,14 +195,11 @@ banner: "sagegreen.jpg"
 # See https://utteranc.es/
 # set follow_site_theme true to make utterances' theme follow the site's
 
-repository: "lucyya99/blog-comments"
-comments:
-  provider: "utterances"
-  utterances:
-    repo: "lucyya99/blog-comments"
-    issue_term: "pathname"
-    label: "utterances comment"
-    follow_site_theme: true
+utterances:
+  repo: "lucyya99/blog-comments"
+  issue_term: "pathname"
+  label: "utterances comment"
+  follow_site_theme: true
 
 # Build settings
 # highlighter: none
