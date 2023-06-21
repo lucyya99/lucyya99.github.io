@@ -76,10 +76,10 @@ lang: "ko"  # default lang is en
 
 # Translate languges
 # langs refer to https://cloud.google.com/translate/docs/languages
-translate_langs:
-  - lang: en
-    img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
-    text: English
+# translate_langs:
+#   - lang: en
+#     img: https://cdn.countryflags.com/thumbs/united-states-of-america/flag-400.png
+#     text: English
 #
 #   - lang: fr
 #     img: https://cdn.countryflags.com/thumbs/france/flag-400.png
@@ -93,9 +93,9 @@ translate_langs:
 #     img: https://cdn.countryflags.com/thumbs/japan/flag-400.png
 #     text: Japanese
 #
-  - lang: ko
-    img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
-    text: Korean
+# - lang: ko
+#   img: https://cdn.countryflags.com/thumbs/south-korea/flag-400.png
+#   text: Korean
 #
 #   - lang: ru
 #     img: https://cdn.countryflags.com/thumbs/russia/flag-400.png
@@ -148,8 +148,8 @@ code_badge:
 header_pages:
   - index.html
   - archives.html
-  - categories.html
   - tags.html
+  - about.html
 
 # Page default value
 # defaults:
@@ -195,12 +195,14 @@ banner: "sagegreen.jpg"
 # See https://utteranc.es/
 # set follow_site_theme true to make utterances' theme follow the site's
 
-# utterances:
-#   repo: "owner/repo"
-#   issue_term: "title"
-#   label: "utterances comment"
-#   theme: "github-light"
-#   follow_site_theme: true
+
+utterances:
+   repo: "lucyya99/blog-comments"
+   issue_term: "pathname"
+   label: "utterances comment"
+   theme: "github-light"
+   crossorigin="anonymous"
+   follow_site_theme: true
 
 # Build settings
 # highlighter: none

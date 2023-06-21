@@ -39,18 +39,6 @@
               <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | upcase | escape }}</a>
               {%- endif -%}
             {%- endfor -%}
-
-            {%- assign name = 'translate_langs' -%}
-            {%- include functions.html func='get_value' -%}
-            {%- assign translate_langs = return -%}
-            {%- if translate_langs.size > 0 -%}
-              {%- assign name = 'lang' -%}
-              {%- include functions.html func='get_value' default='en' -%}
-              {%- assign lang = return -%}
-              <span class="page-link">
-                  {%- include extensions/google-translate.html -%}
-              </span>
-            {%- endif -%}
           </div>
         </nav>
       {%- endif -%}
@@ -66,13 +54,9 @@
     function storeScrollData() {
       var y = getScrollPos().y;
 
-      {%- if banner and header_transparent -%}
-      documentElement.setAttribute("data-header-transparent", "");
-      {%- endif -%}
-
       var scrollStatus = "";
 
-      if (y <= 0) {
+      if (y < 0) {
         scrollStatus = "top";
       } else if ((window.innerHeight + y) >= document.body.offsetHeight) {
         scrollStatus = "bottom";

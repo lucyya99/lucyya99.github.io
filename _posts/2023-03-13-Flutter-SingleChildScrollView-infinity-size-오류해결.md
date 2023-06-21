@@ -5,7 +5,7 @@ tags: flutter flutter/scroll
 ---
 
 # Flutter SingleChildScrollView infinity size 오류 해결
-해결법을 바로 보고 싶은 분들은 바로 해결법 탭으로 넘어가시면 됩니다.
+해결법을 바로 보고 싶은 분들은 *해결법 탭*으로 넘어가시면 됩니다.
 
 ## Task
 1. 로그인 페이지이므로 처음 화면에서는 스크롤을 고정해야 함
