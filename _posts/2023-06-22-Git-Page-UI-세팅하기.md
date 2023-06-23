@@ -37,7 +37,10 @@ url: "https://lucyya99.github.io"
 ```
 
 #### favicon 설정
-favicon은 페이지탭 옆에 나타나는 대표 이미지입니다. 보통 192x192 png 파일을 [favicon.io](https://favicon.io/)에서 favicon으로 변환하여 사용합니다.
+```
+favicon: "{이미지경로}"
+```
+favicon은 페이지탭 옆에 나타나는 대표 이미지입니다. 보통 192x192 png 파일을 [favicon.io](https://favicon.io/)에서 favicon으로 변환하여 사용합니다. 이미지의 경우, 경로 문제가 생길 경우를 대비해서 issue에 올려두고 사용합니다. 이미지를 올리는 방법은 다음편을 참고해주세요!
 
 <img src="https://github.com/lucyya99/lucyya99.github.io/assets/80736490/1f50aab4-d2f4-45d8-8e22-2163478da568">
 
