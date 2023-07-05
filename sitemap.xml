@@ -1,5 +1,10 @@
 ---
 layout: null
+
+lastmode: date
+sitemap:
+  changefreq: daily
+  priority : 1.0
 ---
 
 <?xml version="1.0" encoding="UTF-8"?>
