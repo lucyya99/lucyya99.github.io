@@ -101,7 +101,10 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
   })
 
   share.addEventListener('click', ()=> {
-    navigator.clipboard.writeText(window.location.href)
+    share.addEventListener("copy", (event) => {
+      event.clipboardData.setData("text/plain", window.location.href.toString());
+    });
+//    navigator.clipboard.writeText(window.location.href)
   })
   share.addEventListener('click', ()=> {
     share.classList.toggle('show-share')
