@@ -115,17 +115,15 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     }, 2500)
   })
 
+  var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
   function scrapKakao () {
     Kakao.Share.sendCustom({
       templateId: 95724,
       templateArgs: {
         title: document.title,
-        description: document.getElementsByClassName("post-content")[0].textContent,
-        pagePathname: location.pathname
+        description: content30,
+        pagePathname: location.pathname.substr(1)
       },
     });
-    /*Kakao.Share.sendScrap({
-      requestUrl: window.location.href,
-    });*/
   }
 </script>
