@@ -102,17 +102,20 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
 
   const userAgent = window.navigator.userAgent.toLowerCase();
   share.addEventListener('click', ()=> {
-    var dummy = document.createElement('input'),
-    text = window.location.href;
+    if (userAgent.includes('kakaotalk') || location.protocol == "http:") {
+      var dummy = document.createElement('input'),
+      text = window.location.href;
 
-    document.body.appendChild(dummy);
-    dummy.value = text;
-    dummy.select();
-    var success = document.execCommand('copy');
-    var success_text = success? "success": "fail";
-    document.body.removeChild(dummy);
+      document.body.appendChild(dummy);
+      dummy.value = text;
+      dummy.select();
+      var success = document.execCommand('copy');
+      var success_text = success? "success": "fail";
+      document.body.removeChild(dummy);
+    } else {
+      navigator.clipboard.writeText(window.location.href)
+    }    
     alert(success_text + userAgent);
-    // navigator.clipboard.writeText(window.location.href)
   })
   share.addEventListener('click', ()=> {
     share.classList.toggle('show-share')
