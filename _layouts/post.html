@@ -89,10 +89,6 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
 <div id="snackbar">링크가 복사되었습니다 😉</div>
 
 <script>
-  const clip = () => {
-    navigator.clipboard.writeText(window.location.href)
-  }
-
   var x = document.getElementById("snackbar");
 
   var share = document.getElementById("link-share");
@@ -104,7 +100,9 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     k.classList.toggle('show-share')
   })
 
-  share.addEventListener('click', clip())
+  share.addEventListener('click', ()=> {
+    navigator.clipboard.writeText(window.location.href)
+  })
   share.addEventListener('click', ()=> {
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
@@ -113,6 +111,11 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     setTimeout(function(){ 
       x.className = x.className.replace("show", ""); 
     }, 2500)
+  })
+
+  k.addEventListener('click', () => {
+    share.classList.toggle('show-share')
+    k.classList.toggle('show-share')
   })
 
   var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
