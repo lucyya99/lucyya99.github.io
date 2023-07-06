@@ -99,7 +99,7 @@ sidebar:
     k.classList.toggle('show-share')
   })
 
-  const userAgent = window.navigator.userAgent.toLowerCase();
+//  const userAgent = window.navigator.userAgent.toLowerCase();
   share.addEventListener('click', () => {
     var text = window.location.href;
     var dummy = document.createElement('input')
@@ -110,7 +110,7 @@ sidebar:
     var success = document.execCommand('copy');
     var success_text = success ? "success" : "fail";
     document.body.removeChild(dummy);
-    alert(success_text + userAgent);
+//    alert(success_text + userAgent);
   });
 
   share.addEventListener('click', () => {
