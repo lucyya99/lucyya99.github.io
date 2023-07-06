@@ -4,15 +4,15 @@ banner:
 banner_html: post-header.html
 hidden: []
 sidebar:
-  - article-menu
+- article-menu
 ---
 <script>
-Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야됨
+  Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야됨
 </script>
 <div class="post">
   <section>
 
-    
+
 
     {%- assign name = 'hidden' -%}
     {%- include functions.html func='get_value' -%}
@@ -29,14 +29,15 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     {%- if result.size == 0 -%}
     <div class="post-nav">
       {%- if page.previous -%}
-        <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
+      <a class="previous" href="{{ page.previous.url | relative_url }}" title="{{
           page.previous.title | escape }}">{{ page.previous.title | escape | truncatewords: 6 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
 
       {%- if page.next -%}
-        <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{ page.next.title | escape | truncatewords: 6 }}</a>
+      <a class="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title | escape }}">{{
+        page.next.title | escape | truncatewords: 6 }}</a>
       {%- else -%}
       <span></span>
       {%- endif -%}
@@ -50,7 +51,8 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
       <ul>
         {% assign posts = site[page.collection] | sample:4 %}
         {%- for post in posts -%}
-        <li><a class="post-link" href="{{post.url | relative_url}}" title="{{ page.next.title | escape }}">{{ post.title | escape | truncatewords: 12 }}</a></li>
+        <li><a class="post-link" href="{{post.url | relative_url}}" title="{{ page.next.title | escape }}">{{ post.title
+            | escape | truncatewords: 12 }}</a></li>
         {%- endfor -%}
       </ul>
     </div>
@@ -62,7 +64,8 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     </div>
 
     <a id="kakao-share" class="share-small-button kakao" href="javascript:scrapKakao()">
-      <img src="https://github.com/lucyya99/lucyya99.github.io/assets/80736490/3fb6977b-9de0-47ed-9fac-df516599d1cb" width="24px">
+      <img src="https://github.com/lucyya99/lucyya99.github.io/assets/80736490/3fb6977b-9de0-47ed-9fac-df516599d1cb"
+        width="24px">
     </a>
     <div id="link-share" class="share-small-button">
       <i class="fa-solid fa-clipboard" style="color: #b4b4b4; font-size: 24px;"></i>
@@ -73,15 +76,11 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
       <div><a href="#" style="font-size: 1.2em;"><i class="fa-regular fa-envelope"></i> Contact Me</a></div>
     </div>
 
-    <!-- comment (댓글) -->    
+    <!-- comment (댓글) -->
     <div class="post-comments">
-      <script src="https://utteranc.es/client.js"
-        repo="lucyya99/blog-comments"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-      </script>
+      <script src="https://utteranc.es/client.js" repo="lucyya99/blog-comments" issue-term="pathname"
+        theme="github-light" crossorigin="anonymous" async>
+        </script>
     </div>
   </section>
 </div>
@@ -94,37 +93,33 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
   var share = document.getElementById("link-share");
   var k = document.getElementById("kakao-share");
 
-  var y = document.getElementById("share-button");  
-  y.addEventListener('click', ()=> {
+  var y = document.getElementById("share-button");
+  y.addEventListener('click', () => {
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
   })
 
   const userAgent = window.navigator.userAgent.toLowerCase();
-  share.addEventListener('click', ()=> {
+  share.addEventListener('click', () => {
     var text = window.location.href;
-    if (userAgent.includes('kakaotalk') || location.protocol == "http:") {
-      var dummy = document.createElement('input')
+    var dummy = document.createElement('input')
 
-      document.body.appendChild(dummy);
-      dummy.value = text;
-      dummy.select();
-      var success = document.execCommand('copy');
-      var success_text = success? "success": "fail";
-      document.body.removeChild(dummy);
-    } else {
-      navigator.clipboard.writeText(text);
-    }
+    document.body.appendChild(dummy);
+    dummy.value = text;
+    dummy.select();
+    var success = document.execCommand('copy');
+    var success_text = success ? "success" : "fail";
+    document.body.removeChild(dummy);
     alert(success_text + userAgent);
   });
 
-  share.addEventListener('click', ()=> {
+  share.addEventListener('click', () => {
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
-    
+
     x.className = "show"
-    setTimeout(function(){ 
-      x.className = x.className.replace("show", ""); 
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
     }, 2500)
   });
 
@@ -134,7 +129,7 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
   });
 
   var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
-  function scrapKakao () {
+  function scrapKakao() {
     Kakao.Share.sendCustom({
       templateId: 95724,
       templateArgs: {
