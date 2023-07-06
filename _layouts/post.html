@@ -102,9 +102,9 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
 
   const userAgent = window.navigator.userAgent.toLowerCase();
   share.addEventListener('click', ()=> {
+    var text = window.location.href;
     if (userAgent.includes('kakaotalk') || location.protocol == "http:") {
-      var dummy = document.createElement('input'),
-      text = window.location.href;
+      var dummy = document.createElement('input')
 
       document.body.appendChild(dummy);
       dummy.value = text;
@@ -113,7 +113,7 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
       var success_text = success? "success": "fail";
       document.body.removeChild(dummy);
     } else {
-      navigator.clipboard.writeText(window.location.href)
+      navigator.clipboard.writeText(text)
     }    
     alert(success_text + userAgent);
   })
