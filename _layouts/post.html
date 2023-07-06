@@ -53,12 +53,25 @@ sidebar:
       </ul>
     </div>
     {%- endif -%}
-    
-    <hr>
 
-    
-    <hr>
+    <!-- share icons (공유) -->
+    <div id="share-button" class="share-button">
+      <i class="fa-regular fa-share-from-square"></i>
+    </div>
 
+    <a id="kakao-share" class="share-small-button kakao" href="javascript:scrapKakao()">
+      <img src="https://github.com/lucyya99/lucyya99.github.io/assets/80736490/3fb6977b-9de0-47ed-9fac-df516599d1cb" width="24px">
+    </a>
+    <div id="link-share" class="share-small-button">
+      <i class="fa-solid fa-clipboard" style="color: #b4b4b4; font-size: 24px;"></i>
+    </div>
+
+    <!-- email 작성 -->
+    <div style="text-align: right; margin-top: 50px; margin-bottom: 20px;">
+      <div><a href="#" style="font-size: 1.2em;"><i class="fa-regular fa-envelope"></i> Contact Me</a></div>
+    </div>
+
+    <!-- comment (댓글) -->    
     <div class="post-comments">
       <script src="https://utteranc.es/client.js"
         repo="lucyya99/blog-comments"
@@ -68,6 +81,49 @@ sidebar:
         async>
       </script>
     </div>
-
   </section>
 </div>
+
+<div id="snackbar">링크가 복사되었습니다 😉</div>
+
+<script>
+  const clip = () => {
+    navigator.clipboard.writeText(window.location.href)
+  }
+
+  var x = document.getElementById("snackbar");
+
+  var share = document.getElementById("link-share");
+  var k = document.getElementById("kakao-share");
+
+  var y = document.getElementById("share-button");  
+  y.addEventListener('click', ()=> {
+    share.classList.toggle('show-share')
+    k.classList.toggle('show-share')
+  })
+
+  share.addEventListener('click', clip())
+  share.addEventListener('click', ()=> {
+    share.classList.toggle('show-share')
+    k.classList.toggle('show-share')
+    
+    x.className = "show"
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", ""); 
+    }, 2500)
+  })
+
+  Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야됨
+
+  const scrapKakao = () => {
+    Kakao.Link.sendScrap({
+      templateId: 95724,
+      templateArgs: {
+        title: "{{page.title}}",
+        description: "{{page.excerpt}}",
+        pagePathname: "{{page.url}}"
+      },
+      installTalk: true
+    });
+  }
+</script>

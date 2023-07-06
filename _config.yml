@@ -64,6 +64,9 @@ yat:
 # If you want to change the content width, you can set to another value
 # content_width: "920px"
 
+# kakao sdk
+use_kakao-sdk: true
+
 # Google analytics
 google_analytics: lucyya99
 
