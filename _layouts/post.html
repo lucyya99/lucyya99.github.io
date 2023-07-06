@@ -6,7 +6,9 @@ hidden: []
 sidebar:
   - article-menu
 ---
-
+<script>
+Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야됨
+</script>
 <div class="post">
   <section>
 
@@ -113,17 +115,9 @@ sidebar:
     }, 2500)
   })
 
-  Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야됨
-
-  const scrapKakao = () => {
-    Kakao.Link.sendScrap({
-      templateId: 95724,
-      templateArgs: {
-        title: "{{page.title}}",
-        description: "{{page.excerpt}}",
-        pagePathname: "{{page.url}}"
-      },
-      installTalk: true
+  function scrapKakao () {
+    Kakao.Share.sendScrap({
+      requestUrl: window.location.href,
     });
   }
 </script>
