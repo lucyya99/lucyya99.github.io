@@ -18,15 +18,17 @@
   border-radius: 32px;
   cursor: pointer;
   position: fixed;
-  right: 140px;
-  bottom: 25px;
+  right: 60px;
+  bottom: 48px;
+  opacity: 0.5;
+  transition: ease-in 200ms;
 
   @include media-query(1024px) {
     width: 48px;
     height: 48px;
     border-radius: 24px;
-    right: 95px;
-    bottom: 35px;
+    right: 35px;
+    bottom: 60px;
     font-size: 20px;
   }
 
@@ -34,7 +36,7 @@
     width: 36px;
     height: 36px;
     border-radius: 18px;
-    right: 68px;
+    right: 20px;
     font-size: 14px;
   }
 }
@@ -42,7 +44,7 @@
 .share-small-button:active {
   border-width: 2px;
   border-color: #c5c5c5;
-  color: #4d4d4d;
+  color: #383838;
   transform: translateY(2px) translateX(2px);
 }
 
@@ -100,13 +102,26 @@
 .share-button:active {
   border-width: 2px;
   border-color: #c5c5c5;
-  color: #4d4d4d;
+  color: #383838;
   transform: translateY(4px) translateX(4px);
 }
 
 
 .show-share {
+  right: 140px;
+  bottom: 25px;
   visibility: visible;
+  transition: ease-out 300ms;
+  opacity: 1;
+  
+  @include media-query(1024px) {
+    right: 95px;
+    bottom: 35px;
+  }
+
+  @include media-query($on-palm) {
+    right: 68px;
+  }
 }
 
 
