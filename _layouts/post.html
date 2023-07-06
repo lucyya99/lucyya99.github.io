@@ -113,10 +113,11 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
       var success_text = success? "success": "fail";
       document.body.removeChild(dummy);
     } else {
-      navigator.clipboard.writeText(text)
-    }    
+      navigator.clipboard.writeText(text);
+    }
     alert(success_text + userAgent);
-  })
+  });
+
   share.addEventListener('click', ()=> {
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
@@ -125,12 +126,12 @@ Kakao.init('4118d8ceffc2b008e31cba57f87d1cdc'); // 이거 안보이도록 해야
     setTimeout(function(){ 
       x.className = x.className.replace("show", ""); 
     }, 2500)
-  })
+  });
 
   k.addEventListener('click', () => {
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
-  })
+  });
 
   var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
   function scrapKakao () {
