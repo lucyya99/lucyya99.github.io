@@ -73,7 +73,55 @@ sidebar:
 
     <!-- email 작성 -->
     <div style="text-align: right; margin-top: 50px; margin-bottom: 20px;">
-      <div><a href="#" style="font-size: 1.2em;"><i class="fa-regular fa-envelope"></i> Contact Me</a></div>
+      <div style="font-size: 1.2em;" id="myBtn"><a><i class="fa-regular fa-envelope"></i> Contact Me</a></div>
+    </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="contact-content">
+          <h2>Contact Me (Email)</h2>
+          <form class="gform" method="POST" data-email="example@email.net"
+          action="https://script.google.com/macros/s/AKfycbwAqXSbKusGuQRVhIhIXh1hS76Ha3Vsb6pFsyw0U4MGPOHS5rn3MLXMQcVpSC_-GT2VBA/exec">
+            <!-- change the form action to your script url -->
+
+            <div class="form-elements">
+              <fieldset class="form-group">
+                <label for="email">Email 주소</label>
+                <input id="email" name="email" type="email" value=""
+                required placeholder="your.name@email.com"/>
+              </fieldset>
+
+              <fieldset class="form-group">
+                <label for="name">제목</label>
+                <input id="name" name="name" type="text" value=""/>
+              </fieldset>
+
+              <fieldset class="form-content">
+                <textarea id="contact-message" name="message" rows="10"
+                placeholder="이메일로 보낼 내용을 자유롭게 적어주세요"></textarea>
+              </fieldset>
+
+              <fieldset class="form-group honeypot-field">
+                <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+                <input id="honeypot" type="text" name="honeypot" value="" />
+              </fieldset>
+
+              <div style="text-align: right; padding: 0 30px">
+                <button class="button-success button-xlarge" id="email-send">
+                  <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+              </div>
+            </div>
+
+              <!-- Submit the Form to Google Using "AJAX" -->
+            <script data-cfasync="false" src="/form-submission-handler.js"></script>
+          </form>
+          
+        <!-- END -->
+        </div>
+      </div>
     </div>
 
     <!-- comment (댓글) -->
@@ -88,7 +136,18 @@ sidebar:
 <div id="snackbar">링크가 복사되었습니다 😉</div>
 
 <script>
-  var x = document.getElementById("snackbar");
+  function showSnackbar(message) {
+    var snackbar = document.getElementById("snackbar");
+    snackbar.textContent = message;
+    snackbar.classList.add("show");
+    setTimeout(function() {
+      snackbar.classList.remove("show");
+    }, 2500); // 2.5초 후에 스낵바 숨김
+  }
+
+  // 메일 보내고 나서 스낵바
+  var x = document.getElementById('email-send');
+  x.addEventListener('click', function() {showSnackbar('메일을 보내주셔서 감사합니다! 🤗')});
 
   var share = document.getElementById("link-share");
   var k = document.getElementById("kakao-share");
@@ -118,10 +177,7 @@ sidebar:
     share.classList.toggle('show-share')
     k.classList.toggle('show-share')
 
-    x.className = "show"
-    setTimeout(function () {
-      x.className = x.className.replace("show", "");
-    }, 2500)
+    showSnackbar('링크가 복사되었습니다 😉');
   });
 
   k.addEventListener('click', () => {
@@ -141,3 +197,34 @@ sidebar:
     });
   }
 </script>
+
+<script>
+  // Get the modal
+  var modal = document.getElementById("myModal");
+
+  // Get the button that opens the modal
+  var btn = document.getElementById("myBtn");
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // When the user clicks the button, open the modal 
+  btn.addEventListener('click', () => {
+    modal.style.display = "block";    
+    document.body.classList.toggle('stop-scrolling')
+  })
+
+  // When the user clicks on <span> (x), close the modal
+  span.addEventListener('click', () => {
+    modal.style.display = "none";
+    document.body.classList.toggle('stop-scrolling')
+  })
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.addEventListener('click', (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      document.body.classList.toggle('stop-scrolling')
+    }
+  }) 
+  </script>
