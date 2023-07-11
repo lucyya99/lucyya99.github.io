@@ -34,6 +34,9 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+        env:
+          KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+          KAKAO_TEMPLATE_ID: ${{ secrets.KAKAO_TEMPLATE_ID }}
         with:
           source: ./
           destination: ./_site
