@@ -7,8 +7,7 @@ sidebar:
 - article-menu
 ---
 <script>
-  const kakaoKey = process.env.KAKAO_JAVASCRIPT_KEY
-  Kakao.init(kakaoKey); // 이거 안보이도록 해야됨
+  Kakao.init(env.KAKAO_JAVASCRIPT_KEY); // 이거 안보이도록 해야됨
 </script>
 <div class="post">
   <section>
@@ -186,10 +185,9 @@ sidebar:
 
   // 카카오톡 공유
   var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
-  const templateId = process.env.KAKAO_TEMPLATE_ID
   function scrapKakao() {
     Kakao.Share.sendCustom({
-      templateId: tempId,
+      templateId: env.KAKAO_TEMPLATE_ID,
       templateArgs: {
         title: document.title,
         description: content30,
