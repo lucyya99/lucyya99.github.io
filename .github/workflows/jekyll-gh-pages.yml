@@ -56,7 +56,7 @@ jobs:
         uses: dotenv-actions/setup-dotenv@v2
         with:
           dotenv_path: .env
-          run: echo "Host -> $API_KEY"
+          run: echo "Kakao -> $KAKAO_JAVASCRIPT_KEY"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
