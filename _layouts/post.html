@@ -7,7 +7,7 @@ sidebar:
 - article-menu
 ---
 <script>
-  Kakao.init(env.KAKAO_JAVASCRIPT_KEY); // 이거 안보이도록 해야됨
+  Kakao.init(process.env.KAKAO_JAVASCRIPT_KEY); // 이거 안보이도록 해야됨
 </script>
 <div class="post">
   <section>
@@ -187,7 +187,7 @@ sidebar:
   var content30 = document.getElementsByClassName("post-content")[0].textContent.substr(0, 30);
   function scrapKakao() {
     Kakao.Share.sendCustom({
-      templateId: env.KAKAO_TEMPLATE_ID,
+      templateId: process.env.KAKAO_TEMPLATE_ID,
       templateArgs: {
         title: document.title,
         description: content30,
