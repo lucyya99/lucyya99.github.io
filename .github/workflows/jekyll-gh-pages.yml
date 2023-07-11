@@ -29,8 +29,8 @@ jobs:
         uses: actions/checkout@v3
       - name: Generate Environment Variables File for Production
         run: |
-          echo "REACT_APP_DOMAIN=$REACT_APP_DOMAIN" >> .env.production
-          echo "REACT_APP_DEBUG=$REACT_APP_DEBUG" >> .env.production
+          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env.production
+          echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID" >> .env.production
         env:
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           KAKAO_TEMPLATE_ID: ${{ secrets.KAKAO_TEMPLATE_ID }}
