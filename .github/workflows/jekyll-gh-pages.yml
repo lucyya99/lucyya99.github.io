@@ -28,9 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Environment Variables File for Production
-        run: |
-          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env.production
-          echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID" >> .env.production
+        run:
+          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env
+          echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID" >> .env
         env:
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           KAKAO_TEMPLATE_ID: ${{ secrets.KAKAO_TEMPLATE_ID }}
