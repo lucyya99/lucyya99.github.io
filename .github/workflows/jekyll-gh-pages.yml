@@ -31,6 +31,8 @@ jobs:
         run:
           echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env
           echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID" >> .env
+          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY"
+          echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID"
         env:
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           KAKAO_TEMPLATE_ID: ${{ secrets.KAKAO_TEMPLATE_ID }}
