@@ -28,11 +28,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Generate Environment Variables File for Production
-        run:
+        run: |
           echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env
           echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID" >> .env
-          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY"
-          echo "KAKAO_TEMPLATE_ID=$KAKAO_TEMPLATE_ID"
         env:
           KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           KAKAO_TEMPLATE_ID: ${{ secrets.KAKAO_TEMPLATE_ID }}
@@ -54,6 +52,11 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Load environment variables
+        uses: dotenv-actions/setup-dotenv@v2
+        with:
+          dotenv_path: .env
+          run: echo "Host -> $API_KEY"
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
