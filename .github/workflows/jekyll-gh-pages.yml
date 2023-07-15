@@ -26,16 +26,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-      - name: Generate Environment Variables File for Production
-        run: |
-          echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> .env
-        env:
-          KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+        uses: actions/checkout@v3        
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+        env:
+          KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
         with:
           source: ./
           destination: ./_site
