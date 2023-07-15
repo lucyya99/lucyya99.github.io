@@ -22,26 +22,26 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # Build job
   build:
     runs-on: ubuntu-latest
-
-    env:
-      KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
-
+      
     steps:
-      - uses: actions/checkout@v3
-
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
       - name: Set KAKAO_JAVASCRIPT_KEY environment variable
-        run: echo "KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY" >> $GITHUB_ENV
-
-      - name: Build the site in the jekyll/builder container
-        run: |
-          docker run \
-          -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-          -e KAKAO_JAVASCRIPT_KEY=$KAKAO_JAVASCRIPT_KEY \
-          jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && jekyll build --future"
+        run: echo "KAKAO_JAVASCRIPT_KEY=${{ secrets.KAKAO_JAVASCRIPT_KEY }}" >> $GITHUB_ENV
+      - name: Build with Jekyll
+        uses: lucyya99/jekyll-build-pages@v1
+        env:
+          KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+        with:
+          source: ./
+          destination: ./_site
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v2
 
   # Deployment job
   deploy:
