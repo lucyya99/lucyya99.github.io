@@ -15,11 +15,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3        
@@ -27,6 +24,10 @@ jobs:
         uses: actions/configure-pages@v3
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
+        with:
+          config_file: _config.yml
+          environment:
+            KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
   # Deployment job
