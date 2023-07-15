@@ -6,9 +6,12 @@ hidden: []
 sidebar:
 - article-menu
 ---
-<script>
-  Kakao.init(env.KAKAO_JAVASCRIPT_KEY); // 이거 안보이도록 해야됨
-</script>
+{% if site.KAKAO_JAVASCRIPT_KEY %}
+    <script>
+      var KAKAO_JAVASCRIPT_KEY = "{{ site.KAKAO_JAVASCRIPT_KEY }}";
+      Kakao.init(KAKAO_JAVASCRIPT_KEY);
+    </script>
+{% endif %}
 <div class="post">
   <section>
 
