@@ -6,11 +6,8 @@ hidden: []
 sidebar:
 - article-menu
 ---
-<%= ENV['KAKAO_JAVASCRIPT_KEY'] %>
-
 <script>
       console.log('{{ site.kakao_javascript_key }}');
-      console.log(key);
       Kakao.init('{{ site.kakao_javascript_key }}');
 </script>
 <div class="post">
