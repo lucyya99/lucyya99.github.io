@@ -40,6 +40,9 @@ jobs:
         with:
           secret_names: ${{ steps.secret_json_keys.outputs.json_keys }}
       
+      - name: Check JSON Keys
+        run: echo secret_names 
+      
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
