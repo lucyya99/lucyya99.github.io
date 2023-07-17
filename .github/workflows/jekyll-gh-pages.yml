@@ -36,11 +36,16 @@ jobs:
       - name: Use Secret Value
         run: echo "KAKAO_JAVASCRIPT_KEY=${{ secrets.KAKAO_JAVASCRIPT_KEY }}" >> $GITHUB_ENV
       
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 3.x  # Adjust the version to match your project's requirements
+          path: ~/.rbenv/bin
+        
       - name: Install Dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ruby-full build-essential zlib1g-dev
           gem install bundler
+          bundle config set path ~/.bundle
           bundle install
           
       - name: Build with Jekyll
