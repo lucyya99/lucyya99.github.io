@@ -51,11 +51,15 @@ jobs:
       - name: Build with Jekyll
         run: |
           bundle exec jekyll build --source ./ --destination ./_site
+
+      - name: Verify Site Directory
+        run: |
+          ls -al ./_site
           
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          path: ./site
+          path: ./_site
 
   # Deployment job
   deploy:
