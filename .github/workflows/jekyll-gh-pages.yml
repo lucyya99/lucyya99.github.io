@@ -27,6 +27,7 @@ jobs:
         run: |
           echo "GITHUB_TOKEN=$GITHUB_TOKEN" >> $GITHUB_ENV
           echo "KAKAO_JAVA_SCRIPT_KEY=$KAKAO_JAVA_SCRIPT_KEY" >> $GITHUB_ENV
+          echo $GITHUB_ENV
 
       # Use GitHub Deploy Action to build and deploy to Github
       - uses: lucyya99/jekyll-deploy-action@v0.4.0
