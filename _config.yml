@@ -24,8 +24,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-KAKAO_JAVASCRIPT_KEY: site.KAKAO_JAVASCRIPT_KEY
-
+kakao_javascript_key: <%= ENV['KAKAO_JAVASCRIPT_KEY'] %>
 
 title: Developer Lv1.
 email: lucyya99@gmail.com
