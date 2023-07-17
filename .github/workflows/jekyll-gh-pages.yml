@@ -41,7 +41,7 @@ jobs:
           secret_names: ${{ steps.secret_json_keys.outputs.json_keys }}
       
       - name: Check JSON Keys
-        run: echo secret_names 
+        run: echo ${{ KAKAO_JAVASCRIPT_KEY }} 
       
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
