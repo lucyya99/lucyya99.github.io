@@ -6,13 +6,10 @@ hidden: []
 sidebar:
 - article-menu
 ---
-{% if site.KAKAO_JAVASCRIPT_KEY %}
-    <script>
-      var KAKAO_JAVASCRIPT_KEY = "{{ site.KAKAO_JAVASCRIPT_KEY }}";
-      console.log(KAKAO_JAVASCRIPT_KEY);
-      Kakao.init(KAKAO_JAVASCRIPT_KEY);
-    </script>
-{% endif %}
+<script>
+      console.log({{ site.kakao_javascript_key }});
+      Kakao.init('{{ site.kakao_javascript_key }}');
+</script>
 <div class="post">
   <section>
 
