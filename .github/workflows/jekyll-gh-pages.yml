@@ -30,13 +30,15 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
+      - name: Print Secret Value
+        run: echo "${{ secrets.KAKAO_JAVASCRIPT_KEY }}"
       - name: Update _config.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
           valueFile: ./_config.yml
           propertyPath: KAKAO_JAVASCRIPT_KEY
           value: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
-          commitChange: false
+          commitChange: true
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
