@@ -24,8 +24,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-KAKAO_JAVASCRIPT_KEY: 4118d8ceffc2b008e31cba57f87d1cdc
-
 title: Developer Lv1.
 email: lucyya99@gmail.com
 author: lucyya99
