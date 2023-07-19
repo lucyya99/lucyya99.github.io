@@ -38,8 +38,8 @@ jobs:
       - name: Update _config.yaml
         uses: fjogeleit/yaml-update-action@main
         with:
-          valueFile: ./_config.yml
-          propertyPath: data['KAKAO_JAVASCRIPT_KEY']
+          valueFile: _config.yml
+          propertyPath: KAKAO_JAVASCRIPT_KEY
           value: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
           commitChange: false
       - name: Upload artifact
