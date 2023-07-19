@@ -24,8 +24,6 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-kakao_javascript_key: "{{ site.kakao_javascript_key | default: '' }}"
-
 title: Developer Lv1.
 email: lucyya99@gmail.com
 author: lucyya99
