@@ -38,7 +38,7 @@ jobs:
           valueFile: ./_config.yml
           propertyPath: KAKAO_JAVASCRIPT_KEY
           value: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
-          commitChange: true
+          commitChange: false
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
