@@ -2,7 +2,7 @@
 layout: post
 categories: github
 tags: github gitpage
-title: Git Page 관련 일기 (#999)
+title: Git Page - Github Actions란 (#999)
 ---
 
 ## 0. 알아둘 점
