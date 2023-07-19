@@ -1,3 +1,4 @@
+# Sample workflow for building and deploying a Jekyll site to GitHub Pages
 name: Deploy Jekyll with GitHub Pages dependencies preinstalled
 
 on:
@@ -24,42 +25,25 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      KAKAO_JAVASCRIPT_KEY: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-        
       - name: Setup Pages
         uses: actions/configure-pages@v3
-
-      - name: Use Secret Value
-        run: echo "KAKAO_JAVASCRIPT_KEY=${{ secrets.KAKAO_JAVASCRIPT_KEY }}" >> $GITHUB_ENV
-      
-      - name: Set up Ruby
-        uses: actions/setup-ruby@v1
-        with:
-          ruby-version: 3.x  # Adjust the version to match your project's requirements
-          path: ~/.rbenv/bin
-        
-      - name: Install Dependencies
-        run: |
-          gem install bundler
-          bundle config set path ~/.bundle
-          bundle install
-          
       - name: Build with Jekyll
-        run: |
-          bundle exec jekyll build --source ./ --destination ./_site
-
-      - name: Verify Site Directory
-        run: |
-          ls -al ./_site
-          
-      - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/jekyll-build-pages@v1
         with:
-          path: ./_site
+          source: ./
+          destination: ./_site
+      - name: Update _config.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: ./_config.yml
+          propertyPath: data['KAKAO_JAVASCRIPT_KEY']
+          value: ${{ secrets.KAKAO_JAVASCRIPT_KEY }}
+          commitChange: false
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
 
   # Deployment job
   deploy:
