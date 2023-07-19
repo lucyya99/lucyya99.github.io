@@ -7,8 +7,8 @@ sidebar:
 - article-menu
 ---
 <script>
-      console.log('{{ site.kakao_javascript_key }}');
-      Kakao.init('{{ site.kakao_javascript_key }}');
+      var kakao = '{{ site.kakao_javascript_key }}'
+      Kakao.init(kakao);
 </script>
 <div class="post">
   <section>
