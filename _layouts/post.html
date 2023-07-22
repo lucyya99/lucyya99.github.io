@@ -7,7 +7,10 @@ sidebar:
 - article-menu
 ---
 <script>
-      Kakao.init('{{ site.kakao_javascript_key }}');
+  let scriptElement = document.createElement("script");
+  scriptElement.type = "text/javascript";
+  scriptElement.src = "kakao_include.js";
+  document.body.appendChild(scriptElement);
 </script>
 <div class="post">
   <section>
